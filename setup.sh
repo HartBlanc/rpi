@@ -10,6 +10,9 @@ sudo update-locale en_GB.UTF-8
 # update packages
 sudo apt update && sudo apt full-upgrade -y --fix-missing
 
+# set up vim
+cp .vimrc ~/.vimrc
+
 # install zsh + themes
 sudo apt-get install zsh -y
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
