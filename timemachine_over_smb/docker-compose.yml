@@ -27,5 +27,5 @@ services:
    stdin_open: true
    tty: true
    volumes:
-     - ${BACKUP-VOLUME:-~/tmbackup/data}:/backup:z
+     - ${BACKUP_VOLUME:-~/tmbackup/data}:/backup:z
    command: '-s "Time Machine Backup;/backup;yes;no" -u "${SAMBA_USER:-tm_user};${SAMBA_PASS:-tm_pw}"'
