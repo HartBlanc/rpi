@@ -21,6 +21,7 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 echo 'export LANGUAGE=en_GB.UTF-8' >> ~/.zshrc
 echo 'export LANG=en_GB.UTF-8' >> ~/.zshrc
 echo 'export LC_ALL=en_GB.UTF-8' >> ~/.zshrc
+echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh'
 chsh -s $(which zsh) 
 zsh
 
