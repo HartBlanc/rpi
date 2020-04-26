@@ -34,7 +34,7 @@ Add a line that looks like:
 ```
 UUID=<YOUR-UUID> /media/tm hfsplus defaults,auto,users,rw,nofail 0 0
 ```
-then
+then add ```BACKUP_VOLUME```, ```SAMBA_USER```, and ```SAMBA_PW`` to a .env file and run:
 ```
 $ sudo mount /media/tm
 $ sudo docker-compose up -d
