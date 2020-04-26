@@ -12,6 +12,7 @@ sudo apt update && sudo apt full-upgrade -y --fix-missing
 
 # set up vim
 cp .vimrc ~/.vimrc
+cp .p10k.zsh ~/.p10k.zsh
 
 # install zsh + themes
 sudo apt-get install zsh -y
@@ -20,7 +21,7 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 echo 'export LANGUAGE=en_GB.UTF-8' >>! ~/.zshrc
 echo 'export LANG=en_GB.UTF-8' >>! ~/.zshrc
 echo 'export LC_ALL=en_GB.UTF-8' >>! ~/.zshrc
-chsh -s $(which zsh) # requires password
+chsh -s $(which zsh) 
 zsh
 
 # get docker and set user group 
