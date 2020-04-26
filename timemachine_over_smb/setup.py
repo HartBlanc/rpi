@@ -31,6 +31,6 @@ with open('compose-t.yml') as f, open('docker-compose.yml', 'w') as wf:
 GB = 1000000000
 
 for u,_,q in upqs:
-    with open("plist_t.yml")as t, open("{}/{}/{}".format(environ['BACKUP_VOLUME'],u,".com.apple.TimeMachine.quota.plist"), 'w') as f:
+    with open("plist_t.xml")as t, open("{}/{}/{}".format(environ['BACKUP_VOLUME'],u,".com.apple.TimeMachine.quota.plist"), 'w') as f:
         template = t.read()
         f.write(template.replace("{USER_QUOTA}", str(int(q) * GB)))
