@@ -27,3 +27,7 @@ chsh -s $(which zsh)
 # get docker and set user group 
 sudo curl -fsSL https://get.docker.com | sh
 sudo usermod -aG docker pi
+
+# docker-compose
+sudo apt install -y python3-pip libffi-dev
+sudo pip3 install docker-compose

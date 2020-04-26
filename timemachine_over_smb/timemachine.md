@@ -5,8 +5,6 @@
 
 [Alex Lubbock's - HOWTO this is based on](https://alexlubbock.com/time-machine-network-backup-linux)
 
-[docker-avahi repo](https://github.com/solidnerd/docker-avahi)
-
 [docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
 
 To inspect time machine logs on mac can use:
@@ -34,8 +32,21 @@ Add a line that looks like:
 ```
 UUID=<YOUR-UUID> /media/tm hfsplus defaults,auto,users,rw,nofail 0 0
 ```
-then add ```BACKUP_VOLUME```, ```SAMBA_USER```, and ```SAMBA_PW`` to a .env file and run:
 ```
 $ sudo mount /media/tm
+```
+
+# Configure avahi
+```
+sudo mv timemachine.service /etc/avahi/services/
+```
+```
+export BACKUP_VOLUME={BACKUP-VOLUME}
+```
+create a users.csv file with user,password,quota on each row (quota in GB)
+
+run 
+```
+$ python setup.py
 $ sudo docker-compose up -d
 ```
