@@ -1,8 +1,12 @@
 # Useful Resources
 [Apple Support - Advice on formatting drives for TM](https://support.apple.com/en-gb/HT202784#nas) (Drive should be MacOS journaled)
+
 [Samba Wiki - Configure Samba to Work better with SMB](https://wiki.samba.org/index.php/Configure_Samba_to_Work_Better_with_Mac_OS_X)
+
 [Alex Lubbock's - HOWTO this is based on](https://alexlubbock.com/time-machine-network-backup-linux)
+
 [docker-avahi repo](https://github.com/solidnerd/docker-avahi)
+
 [docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
 
 To inspect time machine logs on mac can use:
