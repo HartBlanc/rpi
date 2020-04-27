@@ -23,14 +23,21 @@ $ sudo mount /dev/sda4 /media/tm
 ```
 sudo mv timemachine.service /etc/avahi/services/
 ```
-```
-export BACKUP_VOLUME=/media/tm
-```
+# Set up users
 create a users.csv file with user,password,quota on each row (quota in GB)
 
-run 
 ```
+export BACKUP_VOLUME=/media/tm
 $ python setup.py
 $ sudo chmod -R 777 /media/tm
+```
+# Run
+```
 $ sudo docker-compose up -d
 ```
+
+Time machine is running, can now access on mac devices.
+
+### To Do
+* quotas not working
+* setup /etc/fstab
