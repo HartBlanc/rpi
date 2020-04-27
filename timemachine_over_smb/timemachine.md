@@ -5,7 +5,9 @@
 * [docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
 
 To inspect time machine logs on mac can use:
-``` log stream --style syslog  --predicate 'senderImagePath contains[cd] "TimeMachine"' --info ```
+```
+ log stream --style syslog  --predicate 'senderImagePath contains[cd] "TimeMachine"' --info
+```
 
 # Set up HDD
 ```
