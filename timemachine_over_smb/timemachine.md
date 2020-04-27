@@ -1,39 +1,22 @@
 # Useful Resources
-[Apple Support - Advice on formatting drives for TM](https://support.apple.com/en-gb/HT202784#nas) (Drive should be MacOS journaled)
-
-[Samba Wiki - Configure Samba to Work better with SMB](https://wiki.samba.org/index.php/Configure_Samba_to_Work_Better_with_Mac_OS_X)
-
-[Alex Lubbock's - HOWTO this is based on](https://alexlubbock.com/time-machine-network-backup-linux)
-
-[docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
+* Note that despite [Apple's Support Docs](https://support.apple.com/en-gb/HT202784#nas) Drive should not be hfs+, hfs+ journaled does not have a write support on linux and journaling is a requirement. ext4 is used in this guide.
+* [Samba Wiki - Configure Samba to Work better with SMB](https://wiki.samba.org/index.php/Configure_Samba_to_Work_Better_with_Mac_OS_X)
+* [KervyN's excellent Reddit HowTo](https://www.reddit.com/r/homelab/comments/83vkaz/howto_make_time_machine_backups_on_a_samba/?utm_source=share&utm_medium=web2x)
+* [docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
 
 To inspect time machine logs on mac can use:
 ``` log stream --style syslog  --predicate 'senderImagePath contains[cd] "TimeMachine"' --info ```
 
-# TODO
-* Allow set up of multiple users
-* Could port forward on random port to free up samba port for other services 
-
 # Set up HDD
-Largely based on [this guide](https://gregology.net/2018/09/raspberry-pi-time-machine) 
 ```
 $ sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
-$ sudo apt install hfsutils hfsprogs
-$ sudo mkfs.hfsplus /dev/<YOUR-DEVICE> -v TimeMachine
+$ sudo mkfs.ext4 /dev/sda4
 $ sudo mkdir /media/tm && sudo chmod -R 777 /media/tm && sudo chown pi:pi /media/tm
 ```
 
 # Mount drive (replace UUID)
 ```
-$ sudo nano /etc/fstab
-```
-
-Add a line that looks like:
-```
-UUID=<YOUR-UUID> /media/tm hfsplus defaults,auto,users,rw,nofail 0 0
-```
-```
-$ sudo mount /media/tm
+$ sudo mount /dev/sda4 /media/tm
 ```
 
 # Configure avahi
@@ -41,12 +24,13 @@ $ sudo mount /media/tm
 sudo mv timemachine.service /etc/avahi/services/
 ```
 ```
-export BACKUP_VOLUME={BACKUP-VOLUME}
+export BACKUP_VOLUME=/media/tm
 ```
 create a users.csv file with user,password,quota on each row (quota in GB)
 
 run 
 ```
 $ python setup.py
+$ sudo chmod -R 777 /media/tm
 $ sudo docker-compose up -d
 ```
