@@ -14,10 +14,6 @@ To inspect time machine logs on mac can use:
 $ sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
 $ sudo mkfs.ext4 /dev/sda4
 $ sudo mkdir /media/tm && sudo chmod -R 777 /media/tm && sudo chown pi:pi /media/tm
-```
-
-# Mount drive (replace UUID)
-```
 $ sudo mount /dev/sda4 /media/tm
 ```
 
