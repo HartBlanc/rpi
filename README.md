@@ -13,7 +13,8 @@ cd rpi && sh +x setup.sh
 
 # Ideas
 
-[## Time Machine](./timemachine_over_smb)
+## Time Machine
+[timemachine_over_smb](./timemachine_over_smb)
 
 * To support samba protocol (AFP discontinued)
 * To support multiple users
