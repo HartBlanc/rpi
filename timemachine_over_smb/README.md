@@ -12,7 +12,7 @@ To inspect time machine logs on mac can use:
 # Set up HDD
 ```
 $ sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
-$ sudo mkfs.ext4 /dev/sda4
+$ sudo mkfs.ext4 /dev/sda4 # WARNING (This will erase the contents of /dev/sda4)
 $ sudo mkdir /media/tm && sudo chmod -R 777 /media/tm && sudo chown pi:pi /media/tm
 $ sudo mount /dev/sda4 /media/tm
 ```
