@@ -1,10 +1,10 @@
 # Useful Resources
-* Note that despite [Apple's Support Docs](https://support.apple.com/en-gb/HT202784#nas) Drive should not be hfs+, hfs+ journaled does not have a write support on linux and journaling is a requirement. ext4 is used in this guide.
-* [Samba Wiki - Configure Samba to Work better with SMB](https://wiki.samba.org/index.php/Configure_Samba_to_Work_Better_with_Mac_OS_X)
-* [KervyN's excellent Reddit HowTo](https://www.reddit.com/r/homelab/comments/83vkaz/howto_make_time_machine_backups_on_a_samba/?utm_source=share&utm_medium=web2x)
-* [docker-samba repo (includes timemachine config)](https://github.com/dperson/samba)
+* Note that despite [Apple's Support Docs](https://support.apple.com/en-gb/HT202784#nas) the backup volume should not be hfs+, hfs+ drivers on linux do not have write support for journaled volumes, additionally the hfs+ drivers are not very reliable so journaling is essential to prevent data loss. ext4 is used in this guide instead.
+* [Samba Wiki](https://wiki.samba.org/index.php/Configure_Samba_to_Work_Better_with_Mac_OS_X) Configure Samba to Work better with Mac OS X. (these options are included in docker-samba but are useful as a reference.)
+* [KervyN's excellent Reddit HowTo](https://www.reddit.com/r/homelab/comments/83vkaz/howto_make_time_machine_backups_on_a_samba/?utm_source=share&utm_medium=web2x) This repo is largely based on this HowTo.
+* [docker-samba](https://github.com/dperson/samba) The smb-set up is facilitated by docker-samba. 
 
-To inspect time machine logs on mac can use:
+To inspect time machine logs on mac you can use:
 ```
  log stream --style syslog  --predicate 'senderImagePath contains[cd] "TimeMachine"' --info
 ```
