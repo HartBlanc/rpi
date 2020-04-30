@@ -13,6 +13,7 @@ sudo apt update && sudo apt full-upgrade -y --fix-missing
 # set up vim
 cp .vimrc ~/.vimrc
 cp .p10k.zsh ~/.p10k.zsh
+cp .zshrc ~/.zshrc
 
 # install zsh + themes
 sudo apt-get install zsh -y
