@@ -2,7 +2,7 @@ export LANGUAGE=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
-alias la='ls -Ah'
+alias la='ls -lAh'
 HISTFILE=~/.zsh_history
 HISTSIZE=2000
 SAVEHIST=1000

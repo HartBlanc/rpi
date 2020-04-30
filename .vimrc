@@ -1,6 +1,6 @@
 set nocompatible
 set backspace=indent,eol,start
-inoremap jj <Esc>
+inoremap jk <Esc>
 syntax on
 filetype on
 set number relativenumber
