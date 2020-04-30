@@ -7,7 +7,7 @@ setup.sh contains a helper script which:
 
 make sure you have git (sudo apt install git)
 ```
-git clone https://github.com/HartBlanc/rpi.git
+git clone --depth=1 https://github.com/HartBlanc/rpi.git
 cd rpi && sh +x setup.sh
 ```
 
