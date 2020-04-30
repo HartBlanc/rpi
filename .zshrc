@@ -1,0 +1,17 @@
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+export LANGUAGE=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
+alias la='ls -Ah'
+HISTFILE=~/.zsh_history
+HISTSIZE=2000
+SAVEHIST=1000
+
+setopt BEEP
+
+[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
+[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

@@ -1,3 +1,7 @@
+set nocompatible
 set backspace=indent,eol,start
 inoremap jj <Esc>
-set nocompatible
+syntax on
+filetype on
+set number relativenumber
+set nu rnu
