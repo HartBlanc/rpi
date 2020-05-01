@@ -10,6 +10,7 @@ make sure you have git (sudo apt install git)
 git clone --depth=1 https://github.com/HartBlanc/rpi.git
 cd rpi && sh +x setup.sh
 ```
+exit and ssh back in afterwards to complete docker installation and activate zsh.
 
 # Ideas
 
